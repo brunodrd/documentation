@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.3" name="generator"/>
+<title>Tri_par sélection - Algorithmes de tri</title>
+<link href="../assets/stylesheets/main.e35208c4.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#tri-par-selection">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Algorithmes de tri" class="md-header__button md-logo" data-md-component="logo" href=".." title="Algorithmes de tri">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Algorithmes de tri
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Tri_par sélection
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+</form>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="./">
+      Tri_par sélection
+    </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Algorithmes de tri" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Algorithmes de tri">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    Algorithmes de tri
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Tri_par sélection
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Tri_par sélection
+      </a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#principe">
+    Principe
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#algorithme-et-exemple-dimplementation-en-python">
+    Algorithme et exemple d'implémentation en python
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validite-de-lalgorithme">
+    Validité de l'algorithme
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#complexite-en-temps">
+    Complexité en temps
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="tri-par-selection">Tri par sélection</h1>
+<h2 id="principe">Principe</h2>
+<p>On commence par rechercher le plus petit élement du tableau puis on l'échange avec le premier élement. Ensuite, on cherche le deuxième plus petit élement et on l'échange avec le deuxième élément du tableau et ainsi de suite jusqu'à ce que le tableau soit entièrement trié.  </p>
+<p>Voir une l'animation proposée.</p>
+<h2 id="algorithme-et-exemple-dimplementation-en-python">Algorithme et exemple d'implémentation en python</h2>
+<p>On peut formaliser l'algorithme du tri par sélection avec le pseudo-code suivant:  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Tri_selection(t)
+t: tableau de n éléments (t[0..n-1)
+Pour i allant de 0 à n-2:
+    idxmini = i
+    Pour j allant de i+1 à n-1:
+        Si t[j] &lt; t[idxmini]:
+            idxmini = j
+    Echanger t[i] et t[idxmini]
+</code></pre></div>
+</td></tr></table>
+<details class="note" open="open"><summary>Travail</summary><ul>
+<li>Appliquer cet algorithme à la main sur le tableau <code>t = [3, 4, 1, 7, 2]</code>.</li>
+<li>donner une implémentation possible en python de cet algorithme et tester.</li>
+</ul>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">echange</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Permute les éléments situés aux index i et j du tableau t</span>
+<span class="sd">    t: tableau non vide</span>
+<span class="sd">    i, j: entiers dans l'intervalle [0, len(t)-1]</span>
+<span class="sd">    """</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span>
+
+<span class="k">def</span> <span class="nf">tri_selection</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    trie par ordre croissant les éléments de t</span>
+<span class="sd">    """</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="c1">#Compléter le code</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># Test</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">tri_selection</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table></p>
+</details>
+<h2 id="validite-de-lalgorithme">Validité de l'algorithme</h2>
+<p>La <strong>terminaison</strong> est assurée car l'algorithme fait intervenir deux boucles bornées (boucle <code>for</code>).  </p>
+<p>Par ailleurs, la situation au <script type="math/tex">i^{ème}</script> tour de boucle peut être représentée de la manière suivante:<br/>
+<img alt="tableau" src="../img/trisel8.png"/><br/>
+Tous les éléments d'indice compris entre 0 et <script type="math/tex">i-1</script> inclus sont triés <strong>et</strong> ils sont tous inférieurs ou égaux aux éléments de la partie non triée, se trouvant entre <script type="math/tex">i</script> et <script type="math/tex">n-1</script>.<br/>
+La preuve de cette proposition logique peut être délicate à établir en classe de 1re. Cette proposition est un <strong>invariant</strong> pour l'algorithme <code>Tri_selection</code>.  </p>
+<div class="admonition important">
+<p class="admonition-title">Définition</p>
+<p>Un invariant de boucle est un <em>prédicat</em> (proposition logique) qui est:  </p>
+<ul>
+<li>initialement vrai;</li>
+<li>vrai à l'entrée d'une itération ainsi qu'à la sortie de celle-ci</li>
+</ul>
+</div>
+<div class="admonition info inline end">
+<p class="admonition-title">Vocabulaire</p>
+<p>Le terme <em>correction</em> est à prendre ici au sens <em>correct</em>. </p>
+</div>
+<p>Trouver le <em>bon</em> invariant garantit que l'algorithme renvoie un résultat conforme aux spécifications et assure ainsi sa <strong>correction partielle</strong>. La combinaison de la correction partielle et de la terminaison permet de conclure à la <strong>correction totale</strong> de l'algorithme.</p>
+<h2 id="complexite-en-temps">Complexité en temps</h2>
+<p>Le contenu de la boucle interne prend un temps d'exécution constant. Evaluons le nombre de fois qu'elle est exécutée.</p>
+<p>Pour <script type="math/tex">i=0</script>, elle est exécutée <script type="math/tex">(n-1)-(0+1)+1=n-1</script> fois.<br/>
+Pour <script type="math/tex">i=1</script>, elle est exécutée <script type="math/tex">(n-1)-(1+1)+1=n-2</script> fois.<br/>
+Si on généralise, le nombre d'exécutions de la boucle interne est:
+<script type="math/tex; mode=display">(n-1)+(n-2)+\cdots +2+1</script>
+Cette somme correspond à la <em>somme des termes consécutifs d'une suite arithmétique</em>, dont la valeur pour <script type="math/tex">n>1</script> est donnée par:
+<script type="math/tex; mode=display">\dfrac{n}{2}\times (n-1)=\dfrac{1}{2}n^2-\dfrac{1}{2}n</script>
+</p>
+<p>Pour une taille <script type="math/tex">n</script> très grande de l'entrée, le terme en <script type="math/tex">n^2</script> devient prépondérant. Autrement dit, le nombre d'opérations effectuées, donc le temps d'exécution, est proportionnel à <script type="math/tex">n^2</script>.<br/>
+<strong>La complexité du tri par sélection est quadratique</strong>.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Résumé</p>
+<p>Le tri par sélection (du minimum) consiste à chercher le plus petit élément de la partie de tableau non triée et à le mettre à sa place définitive.<br/>
+Ce problème est résolu habituellement par un algorithme faisant intervenir deux boucles bornées. La <strong>terminaison</strong> est donc assurée.<br/>
+Un <strong>invariant de boucle</strong> permet de conclure à sa correction partielle. La conjugaison de ces deux propriétés assure la <strong>correction totale</strong> de l'algorithme proposé.<br/>
+Cet algorithme a une <strong>complexité temporelle quadratique</strong>.</p>
+</div>
+<details class="note" open="open"><summary>Application directe</summary><p>En supposant que le tri par sélection prenne un temps directement proportionnel à <script type="math/tex">n^2</script> et qu'un tri de 16000 valeurs nécessite 6.8 s. Calculer le temps nécessaire pour le tri d'un million de valeurs avec cet algorithme.</p>
+</details>
+<details class="note" open="open"><summary>Exercice: temps d'exécution</summary><p>Pour mesurer le temps d'exécution d'un programme, on importe la fonction <code>time</code> du module <code>time</code>. Cette fonction renvoie le temps en secondes écoulé depuis le <script type="math/tex">1^{er}</script> janvier 1970.<br/>
+Le code qui suit permet par exemple d'afficher le temps pris par l'exécution du tri d'un tableau.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="n">top</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">tri_selection</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">top</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+On souhaite comparer les temps d'exécution des tri sélection et insertion sur deux types de tableau: un tableau de nombre au hasard et un tableau de nombres déjà triés. On reprend le code des fonctions de tri du cours.  </p>
+<ol>
+<li>Construire un tableau de 3000 entiers pris au hasard entre 1 et 10000, bornes comprises. Mesurer le temps d'exécution du programme de tri sélection et de tri insertion pour trier ce tableau. <em>Attention: il faut reconstruire le tableau entre les deux tris</em>. Quel commentaire peut-on faire concernant les deux résultats ?</li>
+<li>Construire un tableau de 3000 entiers de 0 à 2999, bornes comprises. Mesurer le temps d'exécution du programme de tri sélection et de tri insertion pour trier ce tableau. Quel commentaire peut-on faire concernant les deux résultats ?</li>
+<li>Mesurer sur un tableau de 100000 entiers, choisis de manière aléatoire entre 1 et 100000, le temps d'exécution de la méthode <code>sort()</code> de python. Syntaxe: <code>t.sort()</code>. Commentez.</li>
+</ol>
+</details>
+<hr/>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg>
+</a>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+ ... <a class="link--pdf-download" download href="../pdf/document.pdf" title="PDF">download PDF</a></div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+<script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

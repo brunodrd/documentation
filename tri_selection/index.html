@@ -58,8 +58,18 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+      Accueil
+    </a>
+</li>
+<li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="./">
       Tri_par sélection
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../tri_insertion_2021/">
+      Tri par insertion
     </a>
 </li>
 </ul>
@@ -78,6 +88,11 @@
     Algorithmes de tri
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Accueil
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -115,6 +130,11 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tri_insertion_2021/">
+        Tri par insertion
+      </a>
 </li>
 </ul>
 </nav>
@@ -224,12 +244,13 @@ Cette somme correspond à la <em>somme des termes consécutifs d'une suite arith
 <p>Pour une taille <script type="math/tex">n</script> très grande de l'entrée, le terme en <script type="math/tex">n^2</script> devient prépondérant. Autrement dit, le nombre d'opérations effectuées, donc le temps d'exécution, est proportionnel à <script type="math/tex">n^2</script>.<br/>
 <strong>La complexité du tri par sélection est quadratique</strong>.</p>
 <div class="admonition abstract">
-<p class="admonition-title">Résumé</p>
+<p class="admonition-title">Ce qu'il faut retenir</p>
 <p>Le tri par sélection (du minimum) consiste à chercher le plus petit élément de la partie de tableau non triée et à le mettre à sa place définitive.<br/>
 Ce problème est résolu habituellement par un algorithme faisant intervenir deux boucles bornées. La <strong>terminaison</strong> est donc assurée.<br/>
 Un <strong>invariant de boucle</strong> permet de conclure à sa correction partielle. La conjugaison de ces deux propriétés assure la <strong>correction totale</strong> de l'algorithme proposé.<br/>
 Cet algorithme a une <strong>complexité temporelle quadratique</strong>.</p>
 </div>
+<hr/>
 <details class="note" open="open"><summary>Application directe</summary><p>En supposant que le tri par sélection prenne un temps directement proportionnel à <script type="math/tex">n^2</script> et qu'un tri de 16000 valeurs nécessite 6.8 s. Calculer le temps nécessaire pour le tri d'un million de valeurs avec cet algorithme.</p>
 </details>
 <details class="note" open="open"><summary>Exercice: temps d'exécution</summary><p>Pour mesurer le temps d'exécution d'un programme, on importe la fonction <code>time</code> du module <code>time</code>. Cette fonction renvoie le temps en secondes écoulé depuis le <script type="math/tex">1^{er}</script> janvier 1970.<br/>
@@ -259,6 +280,34 @@ On souhaite comparer les temps d'exécution des tri sélection et insertion sur 
 </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href=".." rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Précédent
+              </span>
+              Accueil
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../tri_insertion_2021/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Suivant
+              </span>
+              Tri par insertion
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-footer-copyright">

@@ -252,7 +252,7 @@
 <h3 id="mesure-du-temps-dexecution-dun-algorithme">Mesure du temps d'exécution d'un algorithme</h3>
 <ol>
 <li>La fonction <code>randint</code> fait partie du module <code>random</code>. Que réalise cette fonction ? <em>Indication</em>: utiliser la fonction <code>help</code> de python.</li>
-<li>Compléter la spécification de la fonction suivante</li>
+<li>Compléter la spécification de la fonction suivante  </li>
 </ol>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -268,8 +268,84 @@
 <ol>
 <li>Compléter la fonction <code>tempstri(n, algo)</code> qui prend en paramètre un entier naturel $n$  correspendant à la taille d’un tableau et une fonction de tri <code>algo</code>. Cette fonction renvoie le temps mis par l’algorithme de tri <code>algo</code> pour trier un tableau de taille $n$. Tester votre fonction sur les deux tris vus en cours et dont les codes python sont disponible au début de ce sujet.<br/>
 Aide : la fonction <code>time.time()</code> du module <code>time</code> : donne l’heure en seconde. Appelez-la avant puis
-après de faire le tri du tableau.</li>
+après de faire le tri du tableau.  </li>
 </ol>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tempstri</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">algo</span><span class="p">):</span>
+    <span class="sd">""""""</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">alea</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">algo</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">stop</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">stop</span> <span class="o">-</span> <span class="n">start</span>
+
+<span class="c1"># TESTS</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tempstri</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">insertion</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tempstri</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">selection</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+0.05924797058105469<br/>
+0.037672996520996094  </p>
+<h3 id="interpretation-de-la-complexite-dun-algorithme">Interprétation de la complexité d'un algorithme</h3>
+<ol>
+<li>On souhaite visualiser le temps d'exécution d'un algorithme en fonction de la taille du tableau.  On construit d'abord un tableau <code>taille</code> qui contient les tailles des différents tableaux (de 1000 à 10000 par pas de 1000).  On construit ensuite un tableau <code>temps</code> qui contient les temps mis par un algorithme <code>algo</code> pour trier un tableau dont la taille est un élément de <code>taille</code>. Donner le code qui permet de construire le tableau <code>temps</code>. Indications: utiliser la fonction précédente ainsi qu'une construction de tableau par compréhension.</li>
+</ol>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">trace</span><span class="p">(</span><span class="n">algo</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    trace le graphe du temps d'exécution d'un algorithme en fonction de la taille du tableau</span>
+<span class="sd">    algo: nom d'une fonction</span>
+<span class="sd">    """</span>
+    <span class="n">taille</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">11000</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span> <span class="c1">#Un tableau qui contient les tailles de tableau</span>
+    <span class="c1"># Compléter la ligne suivante</span>
+    <span class="n">temps</span> <span class="o">=</span> <span class="p">[</span><span class="n">tempstri</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">algo</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">taille</span><span class="p">]</span>
+    <span class="c1"># Tracé - ne rien modifier ici</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Complexite tri par "</span> <span class="o">+</span> <span class="n">algo</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">taille</span><span class="p">,</span><span class="n">temps</span><span class="p">)</span><span class="c1">#On trace la figure les tailles en abscisse,</span>
+    <span class="c1">#les temps en ordonnées</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Taille tableau'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Temps'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+5. Tracer le graphique donnant le temps d'exécution si on utilise un tri par insertion puis par sélection.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">alea</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    A compléter</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+</code></pre></div>
+</td></tr></table>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -297,10 +373,6 @@ après de faire le tri du tableau.</li>
 0.037672996520996094
 </code></pre></div>
 </td></tr></table>
-<h3 id="interpretation-de-la-complexite-dun-algorithme">Interprétation de la complexité d'un algorithme</h3>
-<ol>
-<li>On souhaite visualiser le temps d'exécution d'un algorithme en fonction de la taille du tableau.  On construit d'abord un tableau <code>taille</code> qui contient les tailles des différents tableaux (de 1000 à 10000 par pas de 1000).  On construit ensuite un tableau <code>temps</code> qui contient les temps mis par un algorithme <code>algo</code> pour trier un tableau dont la taille est un élément de <code>taille</code>. Donner le code qui permet de construire le tableau <code>temps</code>. Indications: utiliser la fonction précédente ainsi qu'une construction de tableau par compréhension.</li>
-</ol>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -336,9 +408,6 @@ après de faire le tri du tableau.</li>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
-<ol>
-<li>Tracer le graphique donnant le temps d'exécution si on utilise un tri par insertion puis par sélection.</li>
-</ol>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># Tri par insertion - compléter</span>
 <span class="n">trace</span><span class="p">(</span><span class="n">insertion</span><span class="p">)</span>

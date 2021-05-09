@@ -130,13 +130,13 @@
 <nav aria-label="La complexité des algorithmes de tri" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#a-mesure-du-temps-dexecution-dun-algorithme">
-    A. Mesure du temps d'exécution d'un algorithme
+<a class="md-nav__link" href="#mesure-du-temps-dexecution-dun-algorithme">
+    Mesure du temps d'exécution d'un algorithme
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#b-interpretation-de-la-complexite-dun-algorithme">
-    B. Interprétation de la complexité d'un algorithme
+<a class="md-nav__link" href="#interpretation-de-la-complexite-dun-algorithme">
+    Interprétation de la complexité d'un algorithme
   </a>
 </li>
 </ul>
@@ -249,7 +249,7 @@
 </code></pre></div>
 </td></tr></table>
 <h2 id="la-complexite-des-algorithmes-de-tri">La complexité des algorithmes de tri</h2>
-<h3 id="a-mesure-du-temps-dexecution-dun-algorithme">A. Mesure du temps d'exécution d'un algorithme</h3>
+<h3 id="mesure-du-temps-dexecution-dun-algorithme">Mesure du temps d'exécution d'un algorithme</h3>
 <ol>
 <li>La fonction <code>randint</code> fait partie du module <code>random</code>. Que réalise cette fonction ? <em>Indication</em>: utiliser la fonction <code>help</code> de python.</li>
 <li>Compléter la spécification de la fonction suivante 
@@ -293,7 +293,7 @@ après de faire le tri du tableau.
     0.05924797058105469<br/>
     0.037672996520996094</li>
 </ol>
-<h3 id="b-interpretation-de-la-complexite-dun-algorithme">B. Interprétation de la complexité d'un algorithme</h3>
+<h3 id="interpretation-de-la-complexite-dun-algorithme">Interprétation de la complexité d'un algorithme</h3>
 <ol>
 <li>On souhaite visualiser le temps d'exécution d'un algorithme en fonction de la taille du tableau.  On construit d'abord un tableau <code>taille</code> qui contient les tailles des différents tableaux (de 1000 à 10000 par pas de 1000).  On construit ensuite un tableau <code>temps</code> qui contient les temps mis par un algorithme <code>algo</code> pour trier un tableau dont la taille est un élément de <code>taille</code>. Donner le code qui permet de construire le tableau <code>temps</code>. Indications: utiliser la fonction précédente ainsi qu'une construction de tableau par compréhension.
     <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -331,7 +331,17 @@ après de faire le tri du tableau.
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table></li>
-<li>Tracer le graphique donnant le temps d'exécution si on utilise un tri par insertion puis par sélection.</li>
+<li>Tracer le graphique donnant le temps d'exécution si on utilise un tri par insertion puis par sélection.
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># Tri par insertion - compléter</span>
+<span class="n">trace</span><span class="p">(</span><span class="n">insertion</span><span class="p">)</span>
+<span class="c1"># Tri par sélection - Compléter</span>
+<span class="n">trace</span><span class="p">(</span><span class="n">selection</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table></li>
+<li>Justifier que la complexité de ces tri est quadratique. On pourra par exemple comparer les temps d'exécution pour trier un tableau de 2000 éléments puis de 6000 ou 10000 éléments.</li>
 </ol>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>

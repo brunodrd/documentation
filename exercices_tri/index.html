@@ -252,8 +252,7 @@
 <h3 id="mesure-du-temps-dexecution-dun-algorithme">Mesure du temps d'exécution d'un algorithme</h3>
 <ol>
 <li>La fonction <code>randint</code> fait partie du module <code>random</code>. Que réalise cette fonction ? <em>Indication</em>: utiliser la fonction <code>help</code> de python.</li>
-<li>Compléter la spécification de la fonction suivante  </li>
-</ol>
+<li>Compléter la spécification de la fonction suivante<br/>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -264,8 +263,7 @@
 <span class="sd">    """</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
 </code></pre></div>
-</td></tr></table>
-<ol>
+</td></tr></table></li>
 <li>Compléter la fonction <code>tempstri(n, algo)</code> qui prend en paramètre un entier naturel $n$  correspendant à la taille d’un tableau et une fonction de tri <code>algo</code>. Cette fonction renvoie le temps mis par l’algorithme de tri <code>algo</code> pour trier un tableau de taille $n$. Tester votre fonction sur les deux tris vus en cours et dont les codes python sont disponible au début de ce sujet.<br/>
 Aide : la fonction <code>time.time()</code> du module <code>time</code> : donne l’heure en seconde. Appelez-la avant puis
 après de faire le tri du tableau.  </li>

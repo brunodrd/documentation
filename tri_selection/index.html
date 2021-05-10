@@ -282,6 +282,101 @@ On souhaite comparer les temps d'exécution des tri sélection et insertion sur 
 </ol>
 </details>
 <hr/>
+<h1 id="tri-par-insertion">Tri par insertion</h1>
+<h2 id="principe_1">Principe</h2>
+<p>Visionner la séquence vidéo proposée. <a href="https://tube-outremer.beta.education.fr/videos/watch/6b6caee0-e1e0-483d-a80b-a1d32dcabb98?stop=27s&amp;autoplay=1&amp;muted=1">Lien</a> </p>
+<p>Le tri par insertion est le tri effectué par le joueur de carte. En supposant que l'on maintienne une partie triée, on décale les cartes de cette partie, de manière à placer la carte à classer (<em>voir video</em>).  </p>
+<p>En informatique, on va très souvent travailler avec un tableau et le <strong>parcourir de la gauche vers la droite, en maintenant la partie déjà triée sur sa gauche</strong> (voir <a href="https://fr.wikipedia.org/wiki/Tri_par_insertion#cite_note-1">lien wikipedia</a>).<br/>
+Concrètement, on va décaler d'une case vers la droite tous les éléments déjà triés, qui sont plus grands que l'élément à classer, puis déposer ce dernier dans la case libérée.</p>
+<h2 id="algorithme">Algorithme</h2>
+<div class="admonition tip">
+<p class="admonition-title">Notation</p>
+<p>La notation <code>t[0..i-1]</code> désigne ici les <script type="math/tex">i</script> premiers éléments d'un tableau <code>t</code>, c'est-à-dire <code>t[0], t[1], ..., t[i-1]</code>.  </p>
+</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Algorithme Tri_insertion(t)
+---------------------------
+t: tableau de n éléments comparables (t[0..n-1])
+
+Pour i allant de 1 à n-1:
+    amener t[i] à sa place parmi t[0..i-1]
+</code></pre></div>
+</td></tr></table>
+<h2 id="implementation-en-python">Implémentation en python</h2>
+<p>On commence par donner une réalisation de <code>amener t[i] à sa place parmi t[0..i-1]</code> en écrivant une fonction <code>place(t, i)</code> qui amène l'élément d'index <script type="math/tex">i</script> à sa place parmi les éléments d'index 0 à <script type="math/tex">i-1</script> déjà classés.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">place</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+    <span class="sd">""" amène t[i] à sa place dans t[0..i-1] supposé trié"""</span>
+    <span class="n">elt_a_classer</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="c1"># décalage des éléments du tableau à droite, pour trouver la place de t[i]</span>
+    <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">t</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">elt_a_classer</span><span class="p">:</span>
+        <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="c1"># on insère l'élément à sa place</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">elt_a_classer</span>
+</code></pre></div>
+</td></tr></table>
+<details class="note" open="open"><summary>Travail</summary><p>Implémenter le tri par insertion en python et le tester.  </p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">insertion</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="c1"># compléter le code de la fonction insertion(t), sans oublier la spécification</span>
+    <span class="k">pass</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># Test</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">insertion</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table></p>
+</details>
+<h2 id="validite-de-lalgorithme_1">Validité de l'algorithme</h2>
+<p>L'algorithme <code>Tri_insertion</code> <strong>termine</strong> car il présente une boucle bornée. La boucle conditionnelle présente dans la réalisation <code>amener t[i] à sa place parmi t[0..i-1]</code> termine également, la quantité <script type="math/tex">j</script> étant un <strong>variant</strong> de boucle.</p>
+<div class="admonition tip">
+<p class="admonition-title">Invariant de boucle</p>
+<p>A la i-ème itération, le sous tableau <code>t[0..i-1]</code> est trié.   </p>
+</div>
+<p>De manière intuitive, on comprend qu'à chaque tour de boucle on se rapproche de la solution recherchée. On agrandit la zone triée de un élément. Exhiber une telle propriété (<em>un invariant de boucle</em>) permet de conclure à la correction partielle de l'algorithme.  </p>
+<p>La combinaison de la correction partielle avec la terminaison permet de conclure à la <strong>correction totale de l'algorithme</strong> <code>Tri_insertion</code>.</p>
+<h2 id="efficacite-complexite-temporelle-de-lalgorithme">Efficacité: complexité temporelle de l'algorithme</h2>
+<p>Afin d'évaluer le coût de l'algorithme dans le pire des cas, on doit s'intéresser aux nombre d'opérations effectuées, qui est ici lié au nombre de décalage avant de trouver la place de l'élément à classer. Le pire des cas se produit lorsque le tableau est classé en sens inverse. Visualisons cela sur un tableau à 5 éléments, simple à trier: <code>t = [5, 4, 3, 2, 1]</code>.  </p>
+<p><img alt="pire" src="../img/insertion_pire.png"/> </p>
+<p>Le nombre de décalage nécessaire est: <script type="math/tex">1 + 2 + 3 + 4 = 10</script>.</p>
+<p>On généralise sans peine: dans le pire des cas, pour un tableau de taille <code>n</code>, il faudra effectuer:</p>
+<p>
+<script type="math/tex; mode=display"> 1+2+\cdots + (n-2) + (n-1)=\dfrac{n}{2}\times(n-1)</script>
+</p>
+<p>décalages.
+Comme pour le tri par sélection, le coût (on dit aussi <em>complexité</em>) en temps du tri par insertion, dans le pire des cas, est <strong>quadratique</strong>. On dit aussi que la complexité est en <script type="math/tex">O(n²)</script>.</p>
+<div class="admonition info">
+<p class="admonition-title">Notation</p>
+<p>La notation <script type="math/tex">O(n²)</script> se lit <em>grand O de n carré</em></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Ce qu'il faut retenir</p>
+<p>Le tri par insertion consiste à maintenir une partie d'un tableau triée et à parcourir la partie non triée en mettant chaque élément rencontré à sa place définitive dans la partie triée.<br/>
+Ce problème est résolu habituellement par un algorithme faisant intervenir une boucle bornée et une boucle conditionnelle. La <strong>terminaison</strong> de la boucle bornée est évidente et celle de la boucle conditionelle facile à montrer avec un <strong>variant de boucle</strong>.<br/>
+L'<strong>invariant de boucle</strong> <em>A la i-ème itération, le sous tableau t[0..i-1] est trié</em>, permet de conclure à sa correction partielle. La conjugaison de ces deux propriétés assure la <strong>correction totale</strong> de l'algorithme proposé.<br/>
+Cet algorithme a une <strong>complexité temporelle quadratique</strong>.</p>
+</div>
+<hr/>
 </article>
 </div>
 </div>

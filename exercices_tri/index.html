@@ -285,15 +285,19 @@ après de faire le tri du tableau.
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tempstri</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">algo</span><span class="p">):</span>
-    <span class="sd">""""""</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tempstri</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">algo</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Renvoie le temps mis par un algorithme pour trier un tableau de taille n</span>
+<span class="sd">    n: entier naturel</span>
+<span class="sd">    algo: fonction de tri</span>
+<span class="sd">    """</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">alea</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">algo</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-    <span class="n">stop</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">stop</span> <span class="o">-</span> <span class="n">start</span>
+    <span class="c1"># A compléter</span>
 
-<span class="c1"># TESTS</span>
+<span class="c1"># TESTS - exemples</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tempstri</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">insertion</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tempstri</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">selection</span><span class="p">))</span>
 <span class="mf">0.05924797058105469</span>  
@@ -328,7 +332,7 @@ après de faire le tri du tableau.
 <span class="sd">    """</span>
     <span class="n">taille</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">11000</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span> <span class="c1">#Un tableau qui contient les tailles de tableau</span>
     <span class="c1"># Compléter la ligne suivante</span>
-    <span class="n">temps</span> <span class="o">=</span> <span class="p">[</span><span class="n">tempstri</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">algo</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">taille</span><span class="p">]</span>
+    <span class="o">...</span>
     <span class="c1"># Tracé - ne rien modifier ici</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Complexite tri par "</span> <span class="o">+</span> <span class="n">algo</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>

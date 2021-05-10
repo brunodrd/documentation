@@ -257,10 +257,9 @@
 <h2 id="la-complexite-des-algorithmes-de-tri">La complexité des algorithmes de tri</h2>
 <h3 id="mesure-du-temps-dexecution-dun-algorithme">Mesure du temps d'exécution d'un algorithme</h3>
 <ol>
-<li>La fonction <code>randint</code> présente dans le module <code>random</code>. Que réalise cette fonction ? <em>Indication</em>: utiliser la fonction <code>help</code> de python.</li>
-<li>Compléter la spécification de la fonction suivante  </li>
-</ol>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<li>La fonction <code>randint</code> est présente dans le module <code>random</code>. Que réalise cette fonction ? <em>Indication</em>: utiliser la fonction <code>help</code> de python.</li>
+<li>Compléter la spécification de la fonction suivante
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -270,13 +269,11 @@
 <span class="sd">    """</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
 </code></pre></div>
-</td></tr></table>
-<ol>
+</td></tr></table></li>
 <li>Compléter la fonction <code>tempstri(n, algo)</code> qui prend en paramètre un entier naturel $n$  correspendant à la taille d’un tableau et une fonction de tri <code>algo</code>. Cette fonction renvoie le temps mis par l’algorithme de tri <code>algo</code> pour trier un tableau de taille $n$. Tester votre fonction sur les deux tris vus en cours et dont les codes python sont disponible au début de ce sujet.<br/>
 Aide : la fonction <code>time.time()</code> du module <code>time</code> : donne l’heure en seconde. Appelez-la avant puis
-après de faire le tri du tableau.  </li>
-</ol>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+après de faire le tri du tableau.
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -286,7 +283,9 @@ après de faire le tri du tableau.  </li>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tempstri</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">algo</span><span class="p">):</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tempstri</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">algo</span><span class="p">):</span>
     <span class="sd">""""""</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">alea</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -297,10 +296,11 @@ après de faire le tri du tableau.  </li>
 <span class="c1"># TESTS</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tempstri</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">insertion</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tempstri</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">selection</span><span class="p">))</span>
+<span class="mf">0.05924797058105469</span>  
+<span class="mf">0.037672996520996094</span>
 </code></pre></div>
-</td></tr></table>
-0.05924797058105469<br/>
-0.037672996520996094  </p>
+</td></tr></table></li>
+</ol>
 <h3 id="interpretation-de-la-complexite-dun-algorithme">Interprétation de la complexité d'un algorithme</h3>
 <ol>
 <li>On souhaite visualiser le temps d'exécution d'un algorithme en fonction de la taille du tableau.  On construit d'abord un tableau <code>taille</code> qui contient les tailles des différents tableaux (de 1000 à 10000 par pas de 1000).  On construit ensuite un tableau <code>temps</code> qui contient les temps mis par un algorithme <code>algo</code> pour trier un tableau dont la taille est un élément de <code>taille</code>. Donner le code qui permet de construire le tableau <code>temps</code>. Indications: utiliser la fonction précédente ainsi qu'une construction de tableau par compréhension.</li>

@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.3" name="generator"/>
+<title>Recherche - ALGORITHMES</title>
+<link href="../assets/stylesheets/main.e35208c4.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#algorithmes-de-recherche">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="ALGORITHMES" class="md-header__button md-logo" data-md-component="logo" href=".." title="ALGORITHMES">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            ALGORITHMES
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Recherche
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+</form>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+      Accueil
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="./">
+      Recherche
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../tri_selection/">
+      Tri par sélection
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../tri_insertion_2021/">
+      Tri par insertion
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../exercices_tri/">
+      Exercices de tris
+    </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="ALGORITHMES" class="md-nav__button md-logo" data-md-component="logo" href=".." title="ALGORITHMES">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    ALGORITHMES
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Accueil
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Recherche
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Recherche
+      </a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recherche-sequentielle">
+    Recherche séquentielle
+  </a>
+<nav aria-label="Recherche séquentielle" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">
+    Introduction
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#parcours-sequentiel-dun-tableau">
+    Parcours séquentiel d'un tableau
+  </a>
+<nav aria-label="Parcours séquentiel d'un tableau" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recherche-dune-occurence">
+    Recherche d'une occurence
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recherche-dun-extremum">
+    Recherche d'un extrémum
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#calcul-dune-moyenne">
+    Calcul d'une moyenne
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#efficacite-des-algorithmes">
+    Efficacité des algorithmes
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recherche-dichotomique">
+    Recherche dichotomique
+  </a>
+<nav aria-label="Recherche dichotomique" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#principe">
+    Principe
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#algorithme">
+    Algorithme
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation-en-python">
+    Implémentation en python
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#terminaison-de-lalgorithme">
+    Terminaison de l'algorithme
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tri_selection/">
+        Tri par sélection
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tri_insertion_2021/">
+        Tri par insertion
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../exercices_tri/">
+        Exercices de tris
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="algorithmes-de-recherche">ALGORITHMES DE RECHERCHE</h1>
+<h2 id="recherche-sequentielle">Recherche séquentielle</h2>
+<h3 id="introduction">Introduction</h3>
+<p>Pour <em>Thomas Cormen</em>, très grand professeur d'informatique, un algorithme est <strong>une procédure de calcul, bien définie, qui prend en entrée une valeur ou un ensemble de valeurs, et qui donne en sortie une valeur ou un ensemble de valeurs</strong>. C'est un outil permettant de résoudre un problème de calcul bien spécifié.<br/>
+Un algorithme doit se terminer dans un temps raisonnable et doit résoudre correctement le problème donné. Ces deux propriétés sont respectivement nommées:  </p>
+<ul>
+<li><strong>complexité</strong> (<em>en temps</em>)</li>
+<li><strong>correction</strong> </li>
+</ul>
+<p>Cette première leçon d'algorithmique sera orientée vers la recherche (<em>séquentielle</em>) d'un élément dans un tableau.</p>
+<h3 id="parcours-sequentiel-dun-tableau">Parcours séquentiel d'un tableau</h3>
+<h4 id="recherche-dune-occurence">Recherche d'une occurence</h4>
+<p>Soit le problème suivant: étant donné un tableau <code>t</code> de <script type="math/tex">n</script> éléments, écrire un algorithme qui permet de dire si un élément <script type="math/tex">x</script> appartient à ce tableau.   </p>
+<p><strong>Le problème</strong>: <script type="math/tex">x</script> appartient-il au tableau ?  </p>
+<p><strong>Les entrées</strong>: un tableau <code>t</code> et un élément <code>x</code>;  </p>
+<p><strong>La sortie</strong>: une réponse vraie ou fausse (<code>True</code> ou <code>False</code>)  </p>
+<p><em>Une</em> solution:  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>---------------------------
+Algorithme appartient(x, t)
+---------------------------
+Entrées:
+- t: tableau
+- x: élément de même type que les éléments du tableau t
+Sortie: booléen (réponse)
+
+Variable: n, entier naturel
+
+n = taille(t)
+Pour i allant de 0 à n-1 
+    Si t[i] = x  
+        Renvoyer Vrai  
+Renvoyer Faux
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#Implémentation en python</span>
+<span class="k">def</span> <span class="nf">appartient_v1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    renvoie un booléen correspondant à la présence ou l'absence de x dans t;</span>
+<span class="sd">    t: tableau</span>
+<span class="sd">    x: élément de même type que les éléments de t</span>
+<span class="sd">    """</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">appartient_v1</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+</td></tr></table>
+<details class="todo" open="open"><summary>Travail</summary><p>Réaliser l'implémentation en python en utilisant une boucle <code>while</code> plutôt qu'une boucle <code>for</code>.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">appartient_v1b</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    renvoie un booléen correspondant à la présence ou l'absence de x dans t;</span>
+<span class="sd">    t: tableau</span>
+<span class="sd">    x: élément de même type que les éléments de t</span>
+<span class="sd">    """</span>
+    <span class="k">pass</span>
+<span class="c1"># TESTS - </span>
+<span class="n">appartient_v1b</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+</code></pre></div>
+</td></tr></table></p>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Remarque</p>
+<p>On peut boucler sur éléments plutôt que les indices; cela nous dispense de la variable <code>n</code>.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">appartient_v2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    renvoie un booléen correspondant à la présence ou l'absence de x dans t;</span>
+<span class="sd">    t: tableau</span>
+<span class="sd">    x: élément de même type que les éléments de t</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">elt</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+</td></tr></table></p>
+</div>
+<h4 id="recherche-dun-extremum">Recherche d'un extrémum</h4>
+<p>Deuxième problème: étant donné un tableau <code>t</code> de <script type="math/tex">n</script> éléments (des entiers pour se fixer les idées). Le deuxième algorithme proposé permet de trouver le minimum parmi les éléments de ce tableau.   </p>
+<p><strong>Le problème</strong>: quellle est la plus petite valeur du tableau ? </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>---------------------
+Algorithme minimum(t)
+---------------------
+Entrée: un tableau t;  
+Sortie: le plus petit élément de t  
+Variables: 
+    n, entier naturel
+    mini, même type que les éléments de t
+Précondition: t non vide
+
+n = taille(t)
+mini = t[0]
+Pour i allant de 1 à n-1:
+    Si t[i] &lt; mini
+        mini = t[i]
+Renvoyer mini
+</code></pre></div>
+</td></tr></table>
+<p><strong>Implémentation en python</strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">minimum</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Renvoie le plus petit élément de t</span>
+<span class="sd">    """</span>
+    <span class="k">assert</span> <span class="n">t</span> <span class="o">!=</span> <span class="p">[],</span> <span class="s2">"Erreur: tableau vide"</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">mini</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">mini</span><span class="p">:</span>
+            <span class="n">mini</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">mini</span>
+
+<span class="c1"># Tests</span>
+<span class="n">minimum</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="n">minimum</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+</code></pre></div>
+</td></tr></table>
+<details class="todo" open="open"><summary>Travail</summary><p>Ecrire et tester l'implémentation d'une fonction retournant l'élément <strong>le plus grand</strong> de <code>t</code></p>
+</details>
+<h4 id="calcul-dune-moyenne">Calcul d'une moyenne</h4>
+<p>Troisième problème: étant donné un tableau <code>t</code> de <script type="math/tex">n</script> éléments que l'on supposera entiers. L'algorithme proposé permet de trouver la moyenne des éléments de ce tableau.   </p>
+<p><strong>Le problème</strong>: quelle est la valeur moyenne des éléments du tableau ?</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>---------------------
+Algorithme moyenne(t)
+---------------------
+Entrée: un tableau t de flottants;  
+Sortie: la moyenne de tous les éléments de t  
+Variables: 
+    n, entier naturel
+    somme, flottant
+Précondition: t non vide
+
+n = taille(t)
+somme = 0
+Pour i allant de 0 à n-1:
+    somme = somme + t[i]
+Renvoyer somme / n
+</code></pre></div>
+</td></tr></table>
+<details class="todo" open="open"><summary>Travail</summary><p>Implémenter cet algorithme en python
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Renvoie la moyenne des éléments d'un tableau t non vide;</span>
+<span class="sd">    """</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Tests</span>
+<span class="n">moyenne</span><span class="p">([</span><span class="mf">5.5</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">,</span> <span class="mf">19.5</span><span class="p">])</span>
+</code></pre></div>
+</td></tr></table></p>
+</details>
+<h3 id="efficacite-des-algorithmes">Efficacité des algorithmes</h3>
+<p>En informatique, la question de la performance des algorithmes est centrale. D'une manière générale, le traitement d'une certaine quantité de données requiert un temps d'xecution lié à cette quantité.<br/>
+Ainsi dans nos exemples où <script type="math/tex">n</script> est la taille du tableau d'entrée, la boucle est parcourue:</p>
+<ul>
+<li>
+<script type="math/tex">n</script> fois dans le pire des cas (<em>si x n'appartient pas au tableau</em>) dans le problème 1</li>
+<li>
+<script type="math/tex">n-1</script> fois dans le problème 2;</li>
+<li>
+<script type="math/tex">n</script> fois dans le problème 3;  </li>
+</ul>
+<p>Le temps d'exécution sera lié au nombre d'opérations effectuées, qui dépend ici de la taille de l'entrée $n$, plus exactement <strong>proportionnel</strong> à <script type="math/tex">n</script> (ou <script type="math/tex">n-1</script>). On dit que <strong>la complexité en temps</strong> de ces algorithmes est <strong>linéaire</strong>.  </p>
+<div class="admonition attention">
+<p class="admonition-title">Remarque</p>
+<p>Il n'est pas question de rechercher de manière exacte le temps d'exécution mais plutôt d'avoir une estimation.  </p>
+</div>
+<h2 id="recherche-dichotomique">Recherche dichotomique</h2>
+<h3 id="principe">Principe</h3>
+<p>On souhaite rechercher une valeur <script type="math/tex">x</script> dans un tableau <code>t</code> trié (<em>par ordre croissant pour se fixer les idées</em>). L'idée principale est de comparer <script type="math/tex">x</script> avec la valeur située au milieu du tableau:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code> g                  m                  d
++-----------------+----+----------------+
+|    ....         |t[m]|    ....        |
++-----------------+----+----------------+
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>si elle est plus petite, il suffit de restreindre la recherche dans la partie gauche du tableau;</li>
+<li>sinon, on la restreint à la partie droite de <script type="math/tex">t</script>.</li>
+<li>ou alors on a trouvé <script type="math/tex">x</script>
+</li>
+</ul>
+<p>En répétant ce procédé on divise la zone de recherche par deux à chaque fois. On peut alors représenter la situation avec le schéma ci-dessous. Il s'agit d'une application du principe <em>diviser pour régner</em> qui sera vu en terminale.  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code> 0              g        d             n-1
++--------------+----------+--------------+
+| éléments &lt; x |  ....    | éléments &gt; x | 
++--------------+----------+--------------+
+</code></pre></div>
+</td></tr></table>
+<h3 id="algorithme">Algorithme</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>---------------------------
+Algorithme dichotomie(x, t)
+---------------------------
+    Entrées: 
+        tableau t de taille n; 
+        x élément à rechercher, de même type que les éléments de t
+    Renvoie index de x ou rien si non trouvé.
+    Pré-condition: t trié
+
+    Variables: g, d et m des index repérant les "bords" du tableau et le milieu respectivement
+
+Fixer g à 0 et d à n-1
+Tant que g &lt;= d
+    calculer index m du milieu du tableau [g..d]
+    Si t[m] = x
+        Renvoyer m
+    Sinon si x &gt; t[m]
+        g = m + 1
+    Sinon si x &lt; t[m]
+        d = m - 1
+Renvoyer non trouvé
+</code></pre></div>
+</td></tr></table>
+<h3 id="implementation-en-python">Implémentation en python</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># Fonction à utiliser pour vérifier qu'un tableau est trié</span>
+<span class="k">def</span> <span class="nf">est_trie</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Vérifie si un tableau t est trié et renvoie un booléen comme réponse</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+<details class="todo" open="open"><summary>Travail</summary><p>Implémenter l'algorithme de la recherche dichotomique en python, en complétant le code ci-dessous.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># RECHERCHE DICHOTOMIQUE</span>
+
+<span class="k">def</span> <span class="nf">dichotomie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Renvoie la position de x dans le tableau t trié; None si non trouvé</span>
+<span class="sd">    Précondition: t trié</span>
+<span class="sd">    """</span>
+    <span class="k">assert</span> <span class="n">est_trie</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s2">"Erreur: tableau non trié"</span>
+
+    <span class="n">g</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># index gauche</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># index droit</span>
+    <span class="c1"># A compléter</span>
+</code></pre></div>
+</td></tr></table></p>
+</details>
+<h3 id="terminaison-de-lalgorithme">Terminaison de l'algorithme</h3>
+<p>Lorsqu'un programme contient une boucle <code>while</code> il est suceptible de <strong>diverger</strong> (<em>on dit aussi qu'il peut entrer dans une boucle infinie</em>). Pour montrer l'arrêt de la boucle, on utilise une technique de raisonnement appelé <strong>technique du variant de boucle</strong>. Il s'agit de trouver parmi les éléments du programme une quantité:  </p>
+<ul>
+<li>entière;</li>
+<li>positive;</li>
+<li>qui décroit strictement à chaque tour de boucle.  </li>
+</ul>
+<p>Si on peut exhiber un variant de boucle, l'algorithme termine.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>g</th>
+<th>d</th>
+<th>m</th>
+<th>t[m]</th>
+<th>d-g</th>
+<th>trouvé ?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initialisation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Fin itération 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Fin itération 2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Fin itération 3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<details class="todo" open="open"><summary>Application</summary><p>Soit <code>t = [1,7,8,9,12,15,15,22,30,31]</code>. On recherche <script type="math/tex">x=15</script> dans <code>t</code>.<br/>
+Compléter le tableau ci-dessus. Conclure</p>
+</details>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg>
+</a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href=".." rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Précédent
+              </span>
+              Accueil
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../tri_selection/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Suivant
+              </span>
+              Tri par sélection
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+ ... <a class="link--pdf-download" download href="../pdf/document.pdf" title="PDF">download PDF</a></div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+<script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

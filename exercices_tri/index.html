@@ -18,7 +18,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#les-tris">
+<a class="md-skip" href="#exercices-sur-les-tris">
           Aller au contenu
         </a>
 </div>
@@ -147,6 +147,21 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#trie-par-ordre-croissant">
+    Trié par ordre croissant ?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tri-sans-modification-du-tableau-dentree">
+    Tri sans modification du tableau d'entrée
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#valeur-plus-frequente">
+    Valeur plus fréquente ***
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -157,7 +172,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="les-tris">Les tris</h1>
+<h1 id="exercices-sur-les-tris">Exercices sur les tris</h1>
 <h2 id="rappel-des-fonctions-du-cours">Rappel des fonctions du cours</h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -355,6 +370,14 @@ Utiliser la fonction <code>tempstri()</code></p>
 <li>Tracer le graphique donnant le temps d'exécution si on utilise un tri par insertion puis par sélection.</li>
 <li>Justifier que la complexité de ces tri est quadratique. On pourra par exemple comparer les temps d'exécution pour trier un tableau de 2000 éléments puis de 6000 ou 10000 éléments.</li>
 </ol>
+<h2 id="trie-par-ordre-croissant">Trié par ordre croissant ?</h2>
+<p>Ecrire une fonction <code>est_trie(t)</code> qui renvoie <code>True</code> si le tableau <code>t</code> est trié dans l’ordre croissant et
+<code>False</code> sinon.  </p>
+<h2 id="tri-sans-modification-du-tableau-dentree">Tri sans modification du tableau d'entrée</h2>
+<p>Les implémentations rencontrées jusqu'à présent effectuaient le <em>tri en place</em>, c'est-à-dire modifiaient le tableau à trier.<br/>
+On demande ici d'écrire une fonction <code>insert_non_mutable(t)</code> qui réalise un tri par insertion du tableau <code>t</code> mais qui <strong>renvoie le résultat dans un nouveau tableau</strong>, laissant <code>t</code> inchangé. On modifiera légèrement la fonction <code>place(t, i)</code> pour résoudre ce problème.</p>
+<h2 id="valeur-plus-frequente">Valeur plus fréquente ***</h2>
+<p>En utilisant un tri par insertion, écrire ne fonction <code>plus_frequente(t)</code> qui prend en paramètre un tableau d’entiers et qui renvoie la valeur la plus fréquente rencontrée dans le tableau. On peut remarquer que dans un  tableau trié, des valeurs égales se retrouvent <em>cote à cote</em>.</p>
 </article>
 </div>
 </div>
